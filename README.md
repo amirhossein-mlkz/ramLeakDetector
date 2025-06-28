@@ -1,60 +1,23 @@
-# \# 🧠 RamLeakDetector
+#  RamLeakDetector
+A lightweight memory leak monitoring tool for Python applications.
 
-# 
+## Step 1: Initialization
+In your application, create an instance of the `RamLeakDetector` class:
 
-# A lightweight memory leak monitoring tool for Python applications.
+```python
 
-# 
+detector = RamLeakDetector()
 
-# ---
+```
+## Step 2: Start Your Application
 
-# 
+Run your software normally and allow it to complete its initial execution loop, so memory is occupied as usual.
 
-# \## 📦 Step 1: Initialization
+## Step 3: Start Monitoring
+Once the application is stable:
+Press `Ctrl + Alt + S` to \*\*start memory monitoring\*\*.
 
-# 
-
-# In your application, create an instance of the `RamLeakDetector` class:
-
-# 
-
-# ```python
-
-# detector = RamLeakDetector()
-
-# ```
-
-# 
-
-# ---
-
-# 
-
-# \## 🏁 Step 2: Start Your Application
-
-# 
-
-# Run your software normally and allow it to complete its initial execution loop, so memory is occupied as usual.
-
-# 
-
-# ---
-
-# 
-
-# \## ⏱ Step 3: Start Monitoring
-
-# 
-
-# Once the application is stable:
-
-# 
-
-# ➡️ Press `Ctrl + Alt + S` to \*\*start memory monitoring\*\*.
-
-# 
-
-# \- A folder will be created at:
+A folder will be created at:
 
 # &nbsp; ```
 
