@@ -16,117 +16,45 @@ Run your software normally and allow it to complete its initial execution loop, 
 ## Step 3: Start Monitoring
 Once the application is stable:
 Press `Ctrl + Alt + S` to \*\*start memory monitoring\*\*.
-
 A folder will be created at:
 
-# &nbsp; ```
+```
+<project\_directory>/ramLeak.logs/RamLeakRecorder
+```
+The session folder will be named:
+```
+RamLeakDe\_<current-date>\_<current-time>
+```
+Memory snapshots are taken \*\*every 30 seconds by default\*\*.
+  
+## Step 4: Let the App Run
+Let the application run under realistic usage to allow memory leaks to develop.  
+We recommend at least \*\*10 minutes\*\* of runtime.
 
-# &nbsp; <project\_directory>/ramLeak.logs/RamLeakRecorder
+## Step 5: Export Memory History
+When you suspect a memory leak has occurred:
+Press `Ctrl + Alt + E` to \*\*export the memory history\*\*.
+A file named `history.hist` will be generated in the session folder.
 
-# &nbsp; ```
+## Step 6: Generate Plots and Report
+To visualize and analyze the memory data:
+Press `Ctrl + Alt + P` to generate output:
+A `plots` subfolder will be created, containing memory usage graphs sorted by growth rate.
+`report.txt` file will be generated, summarizing findings and highlighting leak-prone areas.
 
-# \- The session folder will be named:
 
-# &nbsp; ```
+## Summary of Shortcuts 
+| Shortcut         | Action                          |
+|------------------|---------------------------------|
+| `Ctrl + Alt + S` | Start monitoring                |
+| `Ctrl + Alt + E` | Export memory history (`.hist`) |
+| `Ctrl + Alt + P` | Generate plots and report       |
 
-# &nbsp; RamLeakDe\_<current-date>\_<current-time>
+## Output Folder Structure
+```
+ramLeak.logs/
 
-# &nbsp; ```
-
-# \- Memory snapshots are taken \*\*every 30 seconds by default\*\*.
-
-# 
-
-# ---
-
-# 
-
-# \## ⏳ Step 4: Let the App Run
-
-# 
-
-# Let the application run under realistic usage to allow memory leaks to develop.  
-
-# 💡 We recommend at least \*\*10 minutes\*\* of runtime.
-
-# 
-
-# ---
-
-# 
-
-# \## 📤 Step 5: Export Memory History
-
-# 
-
-# When you suspect a memory leak has occurred:
-
-# 
-
-# ➡️ Press `Ctrl + Alt + E` to \*\*export the memory history\*\*.
-
-# 
-
-# \- A file named `history.hist` will be generated in the session folder.
-
-# 
-
-# ---
-
-# 
-
-# \## 📈 Step 6: Generate Plots and Report
-
-# 
-
-# To visualize and analyze the memory data:
-
-# 
-
-# ➡️ Press `Ctrl + Alt + P` to generate output:
-
-# 
-
-# \- 📂 A `plots` subfolder will be created, containing memory usage graphs sorted by growth rate.
-
-# \- 📄 A `report.txt` file will be generated, summarizing findings and highlighting leak-prone areas.
-
-# 
-
-# ---
-
-# 
-
-# \## 📚 Summary of Shortcuts
-
-# 
-
-# | Shortcut         | Action                          |
-
-# |------------------|---------------------------------|
-
-# | `Ctrl + Alt + S` | Start monitoring                |
-
-# | `Ctrl + Alt + E` | Export memory history (`.hist`) |
-
-# | `Ctrl + Alt + P` | Generate plots and report       |
-
-# 
-
-# ---
-
-# 
-
-# \## 📁 Output Folder Structure
-
-# 
-
-# ```
-
-# ramLeak.logs/
-
-# └── RamLeakRecorder/
-
+└── RamLeakRecorder/
 # &nbsp;   └── RamLeakDe\_YYYY-MM-DD\_HH-MM-SS/
 
 # &nbsp;       ├── history.hist
