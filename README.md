@@ -53,79 +53,18 @@ A `plots` subfolder will be created, containing memory usage graphs sorted by gr
 ## Output Folder Structure
 ```
 ramLeak.logs/
-
 └── RamLeakRecorder/
-# &nbsp;   └── RamLeakDe\_YYYY-MM-DD\_HH-MM-SS/
+└── RamLeakDe\_YYYY-MM-DD\_HH-MM-SS/
+├── history.hist
+├── report.txt
+└── plots/
+├── plot\_1.png
+├── plot\_2.png
+└── ...
+```
+## Configuration
+\- Default snapshot interval: \*\*30 seconds\*\*
+Customization options coming soon!
 
-# &nbsp;       ├── history.hist
-
-# &nbsp;       ├── report.txt
-
-# &nbsp;       └── plots/
-
-# &nbsp;           ├── plot\_1.png
-
-# &nbsp;           ├── plot\_2.png
-
-# &nbsp;           └── ...
-
-# ```
-
-# 
-
-# ---
-
-# 
-
-# \## 🔧 Configuration
-
-# 
-
-# \- Default snapshot interval: \*\*30 seconds\*\*
-
-# \- Customization options coming soon!
-
-# 
-
-# ---
-
-# 
-
-# \## 🛠 Requirements
-
-# 
-
-# \- Python 3.7 or higher
-
-# \- `psutil`
-
-# \- `matplotlib` (for generating plots)
-
-# 
-
-# Install with:
-
-# 
-
-# ```bash
-
-# pip install psutil matplotlib
-
-# ```
-
-# 
-
-# ---
-
-# 
-
-# \## 📬 Feedback \& Contributions
-
-# 
-
-# Feel free to open issues or submit pull requests for suggestions, bugs, or improvements.
-
-# 
-
-# ---
-
+## Requirements
+Python 3.11 or higher
