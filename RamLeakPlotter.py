@@ -44,10 +44,13 @@ class RamLeakPlotter:
     def load_history(self,):
         if not os.path.exists(self.hist_path):
             print(f"history not founded in this path: {self.hist_path}")
-            return
-        
-        with open(self.hist_path, 'rb') as file:
-            self.memory_stats_history = pickle.load(file)
+            return False
+        try:
+            with open(self.hist_path, 'rb') as file:
+                self.memory_stats_history = pickle.load(file)
+            return True
+        except:
+            return False
         
 
     
@@ -118,7 +121,10 @@ class RamLeakPlotter:
 
 
     def export_plots(self,):
-        self.load_history()
+        ret = self.load_history()
+        if not ret:
+            return
+        
         increasement = self.calculate_increasement()
         total = len(increasement)
 

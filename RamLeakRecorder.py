@@ -23,6 +23,7 @@ class RamLeakRecorder:
         self.perion_s = perion_s
         self.parent_dirs = parent_dirs
         self.export_dirs = ''
+        self.history_paths = ''
         
         self.__started_flag = False
         self.memory_stats_history:dict[tracemalloc.Traceback, list[int]] = {}
@@ -45,7 +46,7 @@ class RamLeakRecorder:
                             trigger_on_release=False)
         
         
-        self.gen_paths()
+        
 
         
         
@@ -54,6 +55,8 @@ class RamLeakRecorder:
         tracemalloc.stop()
 
     def start(self,):
+        self.gen_paths()
+
         tracemalloc.start()
         self.__started_flag = True
         module_to_exclude_path = []
@@ -98,6 +101,8 @@ class RamLeakRecorder:
                 self.memory_stats_history[stat.traceback] = [stat.size]
             
     def save_hist(self,):
+        if not self.__started_flag:
+            return
         threading.Thread(target=self.__save_hist).start()
 
     def __save_hist(self,):
